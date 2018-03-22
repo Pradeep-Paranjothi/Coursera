@@ -1,0 +1,27 @@
+---
+title: "Coursea Capstone: Next Word Text Prediction"
+author: "Pradeep Paranjothi"
+date: "March 22, 2017"
+output: slidy_presentation
+---
+
+## Introduction
+
+- The scope of this project is to develop an application to predict next word(s) based on a incomplete sentence. The input data for this application development are the three files with text data from twitter, blog and news.  I have used this data to create the prediction data based on words frequencies. The application, data product, is developed in R using shiny package.
+
+- Due to limitations regarding the computation resources the words frequencies were calculated outside of shiny presentation and saved in Rda files which are loaded when the application is executed.
+
+## Algorithm and application description: 
+
+- This algorithm used for word(s) prediction is back-off algorithm and n-grams. The n-grams are build with 1 to 3 words grams and are saved in different files based on the n-grams level.
+- If a word and/or a combination of words are not found in the highest n-gram data, the next lower n-gram set is used while the initial first word is drop from the search condition. If there is no match found, than the most frequents words from 1-grams are displayed.
+- For performance reasons all the data preparation and n-grams calculation are done outside of the shiny application and the n-grams results are saved in Rda files which are loaded when the shiny application is executed.
+- The application predict next one word and the next two words based on the input text.
+
+
+## Application usage: 
+
+- he instructions for running the application is provided along with the application. Any User requires to type input texts in the text box provided. The other text box shows the intered text along with the suggested completion of the current text/words. 
+- The text box at the bottom is showing the Predicted Next word.
+- I have tested the apllication with common phrases and sentences
+
